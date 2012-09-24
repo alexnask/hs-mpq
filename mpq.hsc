@@ -292,4 +292,4 @@ fileContents (Archive carchive path) num = unsafePerformIO $ do
                                                          return $ if code < 0 then
                                                              Nothing
                                                          else
-                                                             Just $ unsafePerformIO $ packCString buff
+                                                             Just $ unsafePerformIO $ packCStringLen (buff, fromIntegral size)
